@@ -1,0 +1,57 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+/* test */
+.button-container{
+  width: 100rpx;
+  height: 80rpx;
+  text-align: center;
+}
+
+.button-container text{
+  font-size: 20rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  margin: auto;
+}
+
+.button-hight {
+  border: 1px solid #405f80;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.button-hight text{
+  color: #405f80;
+  margin: auto;
+  font-size: 24rpx;
+}
+
+.button-gray {
+  border: 1px solid #b1b1b1;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.button-gray text{
+  color: #ddd;
+}

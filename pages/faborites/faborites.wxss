@@ -1,0 +1,17 @@
+/* pages/faborites/faborites.wxss */
+.order-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.order-container picker{
+  background-color: gainsboro;
+  width: 20%;
+  margin: auto 30rpx auto 30rpx;
+}
+
+.order-container text{
+  background-color: gainsboro;
+  width: 20%;
+  margin: auto 30rpx auto 30rpx;
+}

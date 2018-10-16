@@ -1,0 +1,55 @@
+.button-container{
+  width: 100rpx;
+  height: 60rpx;
+  text-align: center;
+}
+
+.button-container text{
+  font-size: 24rpx;
+  /* font-weight: bold; */
+  line-height: 60rpx;
+  margin: auto;
+}
+
+.button-hight {
+  border: 1px solid #405f80;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.button-hight text{
+  color: #405f80;
+}
+
+.button-gray {
+  border: 1px solid #b1b1b1;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.button-gray text{
+  color: #ddd;
+}
+
+/* .button-container-hight text{
+  font-size: 20rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #405f80;
+}
+
+.button-container {
+
+  width: 130rpx;
+  height: 80rpx;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.button-container text{
+  font-size: 20rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #ddd;
+} */

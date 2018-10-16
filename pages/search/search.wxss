@@ -1,0 +1,156 @@
+/* pages/search/search.wxss */
+@import "/pages/search/button-template/button-template.wxss";
+
+.whole-container{
+  display: flex;
+  flex-direction: column; 
+}
+
+.switch-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #d1d1d1;
+}
+
+.switch-view text{
+  font-size: 36rpx;
+  margin: auto auto auto 20rpx;
+  line-height: 40rpx;
+}
+
+/*search*/
+.search-view{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 50rpx auto 0 auto ;
+} 
+
+.search-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  height: 80rpx;
+  width: 100%;
+  border: 1px solid #405f80;
+  border-radius: 10rpx;
+}
+
+.search-img{
+  margin: auto 20rpx auto 20rpx; 
+  /* justify-content: center; */
+}
+
+.search-container input{
+  height: 100%;
+  width: 100%;
+  /* width: 600rpx; */
+  margin-left: 20rpx;
+  font-size: 28rpx;
+}
+
+.placeholder{
+  font-size: 14px;
+  color: #d1d1d1;
+  margin-left: 20rpx;
+}
+
+.xx-img{
+  margin: auto 20rpx auto 20rpx;
+  height:28rpx;
+  width: 28rpx;
+}
+
+/* advance view */
+
+.adv-label{
+  font-size: 36rpx;
+  line-height: 60rpx;
+}
+
+/* 搜索范围 */
+.adv-range{
+  display: flex;
+  flex-direction: row;
+  margin: 50rpx auto auto 20rpx;
+}
+
+.adv-range-tag-view{
+  margin: auto 10rpx auto 10rpx;
+}
+
+/* 评分 */
+.adv-rating{
+  display: flex;
+  flex-direction: row;
+  margin: 50rpx auto auto 20rpx;
+}
+.adv-rating-input-view{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-around;
+}
+.adv-rating picker{
+  background-color: #d1d1d1;
+  width: 100rpx;
+}
+
+
+/* 日期 */
+.adv-date {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  margin: 50rpx auto auto 20rpx;
+}
+
+.adv-date-picker-view{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-around;
+}
+.adv-date picker{
+  background-color: #d1d1d1;
+  width: 100rpx;
+}
+
+/* 评价人数 */
+.adv-people {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  margin: 50rpx auto auto 20rpx;
+}
+
+.adv-people input{
+  height: 100%;
+  width: 150rpx;
+  /* width: 600rpx; */
+  margin-left: 20rpx;
+  font-size: 28rpx; 
+  border-bottom: 1px solid #405f80; 
+}
+
+.adv-people-input-view{
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: space-around;
+}
+
+.adv-people .placeholder{
+  font-size: 28px;
+  color: #d1d1d1;
+  margin-left: 20rpx;
+}
+
+/* 搜索按钮 */
+.search-button{
+  width:60%;
+  margin-top: 50rpx;
+}

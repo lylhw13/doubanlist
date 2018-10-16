@@ -1,0 +1,15 @@
+<!--pages/result/result.wxml-->
+<view class="order-container">
+  <picker mode="selector" value="{{orderIndexArray[0]}}" range="{{orderArray}}" id="0" bindchange="onOrderChange">
+    {{orderIndexArray[0]}}-{{orderArray[orderIndexArray[0]]}}
+  </picker>
+  <picker mode="selector" value="{{orderIndexArray[1]}}" range="{{orderArray}}" id="1" bindchange="onOrderChange">
+    {{orderIndexArray[1]}}-{{orderArray[orderIndexArray[1]]}}
+  </picker>
+  <!-- <picker mode="selector" value="{{index}}" range="{{orderArray}}" id="2" bindchange="onOrderChange">
+    {{orderArray[index]}}
+  </picker> -->
+  <text class="the-last-one">
+  {{orderIndexArray[2]}}-{{orderArray[orderIndexArray[2]]}}
+  </text>
+</view>

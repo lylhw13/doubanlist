@@ -1,0 +1,10 @@
+<template name="check-button">
+  <view class="button-container">
+    <view wx:if="{{checked}}" class="button-hight">
+      <text>{{tag}}</text>
+    </view>
+    <view wx:else class="button-gray">
+      <text>{{tag}}</text>
+    </view>
+  </view>
+</template>
