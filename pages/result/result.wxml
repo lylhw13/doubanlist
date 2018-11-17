@@ -1,15 +1,18 @@
 <!--pages/result/result.wxml-->
+<import src="/pages/book-item/book-item.wxml"/>
 <view class="order-container">
+  <text>排序依据:</text>
   <picker mode="selector" value="{{orderIndexArray[0]}}" range="{{orderArray}}" id="0" bindchange="onOrderChange">
-    {{orderIndexArray[0]}}-{{orderArray[orderIndexArray[0]]}}
+    > {{orderArray[orderIndexArray[0]]}}
   </picker>
   <picker mode="selector" value="{{orderIndexArray[1]}}" range="{{orderArray}}" id="1" bindchange="onOrderChange">
-    {{orderIndexArray[1]}}-{{orderArray[orderIndexArray[1]]}}
+    > {{orderArray[orderIndexArray[1]]}}
   </picker>
-  <!-- <picker mode="selector" value="{{index}}" range="{{orderArray}}" id="2" bindchange="onOrderChange">
-    {{orderArray[index]}}
-  </picker> -->
-  <text class="the-last-one">
-  {{orderIndexArray[2]}}-{{orderArray[orderIndexArray[2]]}}
-  </text>
+  <picker mode="selector" value="{{orderIndexArray[2]}}" range="{{orderArray}}" id="2" bindchange="onOrderChange">
+    > {{orderArray[orderIndexArray[2]]}}
+  </picker>
+  <text>> {{orderArray[orderIndexArray[3]]}}</text>
+</view>
+<view>
+<template is="book-item-template" data="{{...postData}}"/>
 </view>

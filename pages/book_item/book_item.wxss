@@ -1,0 +1,103 @@
+/* pages/book_item/book_item.wxss */
+
+.main_view {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  margin-left: 0rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+  padding-bottom: 5px;
+  height: 260rpx;
+}
+
+.book_image {
+  height: 100%;
+  width: 300rpx;
+  margin-left: 20rpx;
+  margin-top: 5rpx;
+  margin-right: 20rpx;
+}
+
+.book-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.title-container {
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}
+
+.collect-img {
+  height: 20rpx;
+  width: 20rpx;
+  margin-top:10rpx;
+  margin-right: 30rpx;
+}
+
+.info {
+  font-size: 18rpx;
+}
+
+.score-total-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.stars-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.stars-container text {
+  font-size: 18rpx;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  height: 18rpx;
+  margin-right: 24rpx;
+  margin-top: 6rpx;
+}
+
+.stars image {
+  padding-left: 3rpx;
+  height: 17rpx;
+  width: 17rpx;
+}
+
+.score-detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.score-row text {
+  font-size: 18rpx;
+}
+
+.score-row image {
+  vertical-align: middle;
+  margin-top: 4rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}

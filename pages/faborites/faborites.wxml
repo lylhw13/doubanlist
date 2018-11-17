@@ -12,4 +12,5 @@
   <text class="the-last-one">
   {{orderIndexArray[3]}}-{{orderArray[orderIndexArray[3]]}}
   </text>
+  <button bindtap='onRequest'>request</button>
 </view>

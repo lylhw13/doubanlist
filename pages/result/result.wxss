@@ -2,16 +2,15 @@
 .order-container{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .order-container picker{
   background-color: gainsboro;
-  width: 30%;
-  margin: auto 30rpx auto 30rpx;
+  font-size: 25rpx;
 }
 
 .order-container text{
+  font-size: 25rpx;
   background-color: gainsboro;
-  width: 30%;
-  margin: auto 30rpx auto 30rpx;
 }

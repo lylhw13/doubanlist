@@ -1,7 +1,10 @@
 {
   "pages": [
-    "pages/faborites/faborites",
     "pages/result/result",
+    
+    "pages/faborites/faborites",
+    
+    "pages/book_item/book_item",
     "pages/search/search",
     "pages/index/index",
     "pages/logs/logs"

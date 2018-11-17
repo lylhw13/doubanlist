@@ -1,0 +1,42 @@
+<template name="book-item-template">
+<view class="main_view">
+  <image class="book_image" src="{{image_path}}"></image>
+  <view class="book-info-container">
+  <view class="title-container">
+      <text>{{title}}</text> 
+      <image class="collect-img"src="/images/icons/star.png"></image>
+  </view>
+    <view class="detail-container">
+      <text class="info">{{info}}</text>
+
+      <view class="book-score">
+      <view class='score-total-container'>
+        <text>评分：{{rating_num}}</text>
+        <view class="stars-container">
+          <view class="stars">
+            <block wx:for="{{star_array}}" wx:for-item="i">
+              <image wx:if="{{i==2}}" src="/images/icons/star.png"></image>
+              <image wx:elif="{{i==1}}" src="/images/icons/half-star.png"></image>
+              <image wx:else src="/images/icons/none-star.png">0</image>
+            </block>
+          </view>
+          <text>{{rating_people}}人评分</text>
+        </view>
+      </view>
+      <view class="score-detail-container">
+          <block wx:for="{{score_array}}" wx:for-item="i" wx:for-index="idx">
+        <view class="score-row">
+            <text>{{5-idx}}星</text>
+            <image src="/images/icons/band.png" style="height:6px;width:{{i}}px"></image>
+            <text>{{i}}%</text>
+        </view>
+            
+          </block>
+      </view>
+    </view>
+    </view>
+
+    
+  </view>
+</view>
+</template>
