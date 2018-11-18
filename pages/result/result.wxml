@@ -1,5 +1,6 @@
 <!--pages/result/result.wxml-->
 <import src="/pages/book-item/book-item.wxml"/>
+
 <view class="order-container">
   <text>排序依据:</text>
   <picker mode="selector" value="{{orderIndexArray[0]}}" range="{{orderArray}}" id="0" bindchange="onOrderChange">
@@ -14,5 +15,7 @@
   <text>> {{orderArray[orderIndexArray[3]]}}</text>
 </view>
 <view>
-<template is="book-item-template" data="{{...postData}}"/>
+<block wx:for="{{postData}}" wx:for-index="idx">
+<template is="book-item-template" data="{{...postData[idx]}}"/>
+</block>
 </view>

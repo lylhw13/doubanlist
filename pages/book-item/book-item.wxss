@@ -13,7 +13,7 @@
   height: 260rpx;
 }
 
-.book_image {
+.book-image {
   height: 100%;
   width: 300rpx;
   margin-left: 20rpx;
@@ -21,18 +21,14 @@
   margin-right: 20rpx;
 }
 
-.book-info-container {
+.all-info-container {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-
-.detail-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.all-info-container text{
+  font-size: 18rpx;
 }
-
 
 .title-container {
   height: 60rpx;
@@ -42,6 +38,15 @@
   margin-top: 15rpx;
 }
 
+.title-container text{
+  font-size: 30rpx;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .collect-img {
   height: 20rpx;
   width: 20rpx;
@@ -49,29 +54,38 @@
   margin-right: 30rpx;
 }
 
-.info {
-  font-size: 18rpx;
+.book-info {
+  flex: 1;
+}
+
+.book-score{
+  flex: 1;
 }
 
 .score-total-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
+.score-total-text {
+  flex-grow: 1;
+}
+.score-total-text text{
+  font-size: 30rpx;
+  line-height: 30rpx;
+}
 .stars-container {
   display: flex;
   flex-direction: column;
 }
 
-.stars-container text {
-  font-size: 18rpx;
-}
 
 .stars {
   display: flex;
   flex-direction: row;
   height: 18rpx;
-  margin-right: 24rpx;
+  margin-right: 15rpx;
   margin-top: 6rpx;
 }
 
@@ -90,14 +104,11 @@
   display: flex;
   flex-direction: row;
 }
-
-.score-row text {
-  font-size: 18rpx;
+.star-order{
+  width: 35rpx;
 }
-
 .score-row image {
   vertical-align: middle;
   margin-top: 4rpx;
-  margin-left: 15rpx;
   margin-right: 15rpx;
 }

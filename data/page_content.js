@@ -6,7 +6,7 @@ var local_data = [
     "info": "作者:[美] 曼昆\n出版社:机械工业出版社\n译者:梁小民\n出版年:2003-8\n页数:323；410\n定价:88.00元\n装帧:平装\nISBN:9787111126768\n",
     "image_name": "经济学原理（上下）-1028842",
     "image_url": "https://img3.doubanio.com/view/subject/l/public/s1785715.jpg",
-    "rating_num": "7.10",
+    "rating_num": "9.10",
     "rating_people": "11702",
     "stars_per": "62.4,30.0,6.9,0.5,0.3",
     "tags": "经济学,曼昆,经济学原理,经济学入门,经济,经典,教材,economics"

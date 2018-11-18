@@ -35,25 +35,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var postData = post_data.postList[0];
-    postData.image_path = '/images/pic/' + this.data.image_name + '.jpg';
+    var postData = post_data.postList;
+    for(var idx=0;idx<postData.length;idx++){
+      //var postData = post_data.postList[0];
+      postData[idx].image_path = '/images/pic/' + postData[idx].image_name + '.jpg';
 
-    var num = Math.round(parseFloat(this.data.rating_num))
-    var full_star = parseInt(num / 2);
-    var half_star = num % 2;
-    var star_array = [0, 0, 0, 0, 0]
-    for (var i = 0; i < full_star; i++) {
-      star_array[i] = 2;
-    }
-    if (half_star > 0) {
-      star_array[full_star] = 1;
-    }
+      var num = Math.round(parseFloat(postData[idx].rating_num))
+      var full_star = parseInt(num / 2);
+      var half_star = num % 2;
+      var star_array = [0, 0, 0, 0, 0]
+      for (var i = 0; i < full_star; i++) {
+        star_array[i] = 2;
+      }
+      if (half_star > 0) {
+        star_array[full_star] = 1;
+      }
 
-    var score_array = JSON.parse("[" + this.data.stars_per + "]");
+      var score_array = JSON.parse("[" + postData[idx].stars_per + "]");
+      postData[idx].star_array = star_array;
+      postData[idx].score_array = score_array;
+    }
     
-    postData.star_array = star_array;
-    postData.score_array = score_array;
-
     this.setData({
       postData: postData
     })

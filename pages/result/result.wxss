@@ -1,4 +1,6 @@
 /* pages/result/result.wxss */
+@import "/pages/book-item/book-item.wxss";
+
 .order-container{
   display: flex;
   flex-direction: row;
