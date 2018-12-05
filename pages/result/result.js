@@ -54,11 +54,13 @@ Page({
       var score_array = JSON.parse("[" + postData[idx].stars_per + "]");
       postData[idx].star_array = star_array;
       postData[idx].score_array = score_array;
+      postData[idx].idx = idx;
     }
     
     this.setData({
       postData: postData
     })
+    //console.log(sha256("haha"));
   },
 
   /**

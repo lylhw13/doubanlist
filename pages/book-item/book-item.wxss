@@ -13,18 +13,19 @@
   height: 260rpx;
 }
 
-.book-image {
-  height: 100%;
-  width: 300rpx;
-  margin-left: 20rpx;
+.book-image image{
+  height: 260rpx;
+  width: 200rpx;
+  margin-left: 15rpx;
   margin-top: 5rpx;
-  margin-right: 20rpx;
+  margin-right: 15rpx;
 }
 
 .all-info-container {
   display: flex;
   flex-direction: column;
   width: 100%;
+  justify-content: flex-start;
 }
 .all-info-container text{
   font-size: 18rpx;
@@ -42,11 +43,6 @@
   font-size: 30rpx;
 }
 
-.detail-container {
-  display: flex;
-  flex-direction: row;
-}
-
 .collect-img {
   height: 20rpx;
   width: 20rpx;
@@ -54,30 +50,42 @@
   margin-right: 30rpx;
 }
 
+.detail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .book-info {
-  flex: 1;
+  margin-right: 5rpx;
+  margin-top:10rpx;
+  display: flex;
+}
+.book-info text{
+  width:235rpx;
+  line-height: 25rpx;
 }
 
 .book-score{
-  flex: 1;
+  margin-right: 10rpx;
+  background-color:#ededed;
 }
 
 .score-total-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-right: 10rpx;
 }
 
-.score-total-text {
-  flex-grow: 1;
-}
 .score-total-text text{
   font-size: 30rpx;
-  line-height: 30rpx;
+  line-height: 50rpx;
 }
 .stars-container {
   display: flex;
   flex-direction: column;
+  height: 50rpx;
 }
 
 
@@ -106,9 +114,11 @@
 }
 .star-order{
   width: 35rpx;
+  text-align: right;
 }
 .score-row image {
   vertical-align: middle;
   margin-top: 4rpx;
   margin-right: 15rpx;
+  margin-left: 15rpx;
 }

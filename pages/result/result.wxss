@@ -5,14 +5,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background-color: ghostwhite;
+  height: 50rpx;
 }
 
 .order-container picker{
-  background-color: gainsboro;
+  line-height: 50rpx;
+  border-radius: 3rpx;
   font-size: 25rpx;
 }
 
 .order-container text{
+  line-height: 50rpx;
   font-size: 25rpx;
-  background-color: gainsboro;
 }

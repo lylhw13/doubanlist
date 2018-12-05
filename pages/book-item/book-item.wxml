@@ -1,15 +1,18 @@
 <template name="book-item-template">
   <view class="main_view">
-    <image class="book-image" src="{{image_path}}"></image>
+  <view class="book-image">
+    <image src="{{image_path}}"></image>  
+  </view>
     <view class="all-info-container">
       <view class="title-container">
         <text>{{title}}</text>
         <image class="collect-img" src="/images/icons/star.png"></image>
       </view>
       <view class="detail-container">
-          <text class="book-info">{{info}}</text>
-
-
+        <view class="book-info">
+          <text >{{main_info}}</text>
+        </view>
+        
         <view class="book-score">
           <view class='score-total-container'>
             <view class='score-total-text'>
@@ -30,7 +33,7 @@
             <block wx:for="{{score_array}}" wx:for-item="i" wx:for-index="idx">
               <view class="score-row">
                 <text class="star-order">{{5-idx}}星</text>
-                <image src="/images/icons/band.png" style="height:6px;width:{{i}}px"></image>
+                <image src="/images/icons/band.png" style="height:6px;width:{{i/1.15}}px"></image>
                 <text>{{i}}%</text>
               </view>
 
@@ -38,7 +41,6 @@
           </view>
         </view>
       </view>
-
 
     </view>
   </view>
