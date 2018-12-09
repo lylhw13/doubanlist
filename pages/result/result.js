@@ -9,7 +9,7 @@ Page({
   data: {
     orderArray: ["评分", "日期", "评价人数", "自定义"],
     orderIndexArray: ["0", "1", "2", "3"],
-    
+    showMoreInfo: false
   },
   onOrderChange: function (e) {
     var pickerId = e.currentTarget.id;
@@ -55,14 +55,27 @@ Page({
       postData[idx].star_array = star_array;
       postData[idx].score_array = score_array;
       postData[idx].idx = idx;
+
+      var tagsArray = postData[idx].tags.split(',');
+      postData[idx].tagsArray = tagsArray;
     }
     
     this.setData({
       postData: postData
     })
-    //console.log(sha256("haha"));
   },
-
+  
+  onMoreInfo: function(e) {
+    this.setData({
+      showMoreInfo: true,
+      moreInfoIndex: e.currentTarget.id,
+    })
+  },
+  onCloseMoreInfo: function(e) {
+    this.setData({
+      showMoreInfo: false,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
