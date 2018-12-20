@@ -1,0 +1,145 @@
+/* pages/book_item/book_item.wxss */
+
+.main_view {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  margin-left: 0rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+  padding-bottom: 5px;
+  height: 260rpx;
+}
+
+.book-image image{
+  height: 260rpx;
+  width: 200rpx;
+  margin-left: 15rpx;
+  margin-top: 5rpx;
+  margin-right: 15rpx;
+}
+
+.all-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+}
+.all-info-container text{
+  font-size: 18rpx;
+}
+
+.title-container {
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}
+
+.title-container text{
+  font-size: 30rpx;
+}
+
+.collect-img {
+  height: 20rpx;
+  width: 20rpx;
+  margin-top:10rpx;
+  margin-right: 30rpx;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 10rpx;
+}
+
+.book-info {
+  margin-right: 5rpx;
+  margin-top:10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.tags-view {
+  display: flex;
+  flex-wrap: wrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+.tag-item {
+  margin: 5rpx 5rpx;
+  width: fit-content;
+  line-height: 30rpx;
+  display: flex;
+  border-radius: 15rpx;
+  background-color: #ededed;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+}
+
+.tags-view .more-text {
+  margin: 5rpx 5rpx;
+  line-height: 30rpx;
+}
+
+.book-score{
+border-left: 1rpx solid #999;
+padding-left: 5rpx;
+}
+
+
+.score-total-container {
+  display: flex;
+  flex-direction: row;
+  width: 250rpx;
+}
+
+.score-total-text text{
+  font-size: 27rpx;
+  line-height: 50rpx;
+}
+.stars-container {
+  display: flex;
+  flex-direction: column;
+  height: 50rpx;
+  margin-left: 10rpx;
+}
+
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  height: 18rpx;
+  margin-right: 15rpx;
+  margin-top: 6rpx;
+}
+
+.stars image {
+  padding-left: 3rpx;
+  height: 15rpx;
+  width: 15rpx;
+}
+
+.score-detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-row {
+  display: flex;
+  flex-direction: row;
+}
+.star-order{
+  width: 35rpx;
+  text-align: right;
+}
+.score-row image {
+  vertical-align: middle;
+  margin-top: 6rpx;
+  margin-right: 7rpx;
+  margin-left: 7rpx;
+}

@@ -27,43 +27,21 @@ Page({
     })
   },
 
-  // onOrderChange: function(e) {
-  //   var pickerId = e.currentTarget.id;
-  //   var itemId = e.detail.value;
-  //   if (pickerId == 0) {
-  //     var localArray = [itemId];
-  //     for (var value in [0, 1, 2, 3]) {
-  //       if (value !== itemId) {
-  //         localArray.push(value);
-  //       }
-  //     }
-  //     //console.log(localArray)
-  //     this.setData({
-  //       orderIndexArray: localArray
-  //     })
-  //   } else if (pickerId == 1) {
-  //     if (itemId !== this.data.orderIndexArray[0]) {
-  //       var localArray = [this.data.orderIndexArray[0], itemId];
-  //       for (var value in [0, 1, 2, 3]) {
-  //         if (!localArray.includes(value)) {
-  //           localArray.push(value);
-  //         }
-  //       }
-  //       this.setData({
-  //         orderIndexArray: localArray
-  //       })
-  //     }
-  //   } else { //pickerId == 2
-  //     if (itemId !== this.data.orderIndexArray[0]) {
-  //       var tmp = this.data.orderIndexArray[pickerId];
-  //       this.data.orderIndexArray[pickerId] = itemId;
-  //       this.data.orderIndexArray[pickerId + 1] = tmp;
-  //       this.setData({
-  //         orderIndexArray: this.data.orderIndexArray
-  //       })
-  //     }
-  //   }
-  // },
+  onRequest: function(e){
+    console.log("begin request");
+    wx.request({
+      url: "http://192.168.0.105:8080",
+      data: {},
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'GET',
+      success (res){
+        console.log("request success")
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
