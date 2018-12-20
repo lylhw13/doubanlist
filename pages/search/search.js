@@ -48,5 +48,20 @@ Page({
     this.setData({
       searchRange : this.data.searchRange
     })
+  },
+  onSearch: function(e) {
+    console.log('here')
+    wx.request({
+      url: 'https://149.28.213.189:443',
+      success:function(res) {
+        console.log('success');
+      },
+      fail: function (res) {
+        console.log('fail');
+      },
+      complete: function (res) {
+        console.log('complete');
+      }
+    })
   }
 })

@@ -128,12 +128,12 @@
 }
 
 .adv-people input{
-  height: 100%;
   width: 150rpx;
   /* width: 600rpx; */
   margin-left: 20rpx;
   font-size: 28rpx; 
   border-bottom: 1px solid #405f80; 
+  background-color: gainsboro;
 }
 
 .adv-people-input-view{
