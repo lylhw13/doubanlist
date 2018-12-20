@@ -1,17 +1,8 @@
 {
   "pages": [
     "pages/search/search",
-<<<<<<< HEAD
     "pages/faborites/faborites",
-    "pages/result/result",
-    
-=======
-    
-    "pages/result/result",
-    
-    "pages/faborites/faborites",
-    
->>>>>>> 5fc08f3ac706db724938ad3cc65e566bcd79b3ce
+    "pages/result/result",    
     "pages/index/index",
     "pages/logs/logs"
   ],

@@ -35,13 +35,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-<<<<<<< HEAD
-    wx.request({
-      url: 'http://localhost',
-      
-    })
-  },
-=======
     var postData = post_data.postList;
     for(var idx=0;idx<postData.length;idx++){
       //var postData = post_data.postList[0];
@@ -62,7 +55,6 @@ Page({
       postData[idx].star_array = star_array;
       postData[idx].score_array = score_array;
       postData[idx].idx = idx;
->>>>>>> 5fc08f3ac706db724938ad3cc65e566bcd79b3ce
 
       var tagsArray = postData[idx].tags.split(',');
       postData[idx].tagsArray = tagsArray;

@@ -19,7 +19,7 @@
   <view class='advance-view'>
 
 
-    <view class="adv-range">
+    <view class="adv-item">
       <text class="adv-label">搜索范围：</text>
       <view class="adv-range-content" wx:for="{{searchRange}}" wx:for-item="item" wx:for-index="idx">
         <view class="adv-range-tag-view" bindtap="onTapTags" id="{{idx}}">
@@ -31,7 +31,7 @@
 
 
 
-    <view class='adv-rating'>
+    <view class='adv-item'>
       <text class="adv-label">评分：</text>
       <view class="adv-rating-input-view">
         <picker mode="multiSelector" value="{{scoreIndexArray[0]}}" range="{{scoreArray}}" id="0" bindchange="bindScoreChange">
@@ -51,7 +51,7 @@
 
     <!-- 日期 -->
 
-    <view class='adv-date'>
+    <view class='adv-item'>
       <text class="adv-label">日期：</text>
       <view class="adv-date-picker-view">
         <picker mode='date' value="{{dateArray}}" start="1900-01" end="2020-01" fields="year" id="0" bindchange="bindDateChange">
@@ -70,7 +70,7 @@
       </view>
     </view>
 
-    <view class='adv-people'>
+    <view class='adv-item'>
       <text class="adv-label">评价人数：</text>
       <view class="adv-people-input-view">
         <input placeholder="最少人数" value="{{peopleArray[0]}}" placeholder-class="placeholder" maxlength="9" id="0" type="number">
