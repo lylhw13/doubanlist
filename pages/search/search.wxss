@@ -86,10 +86,16 @@
 
 .adv-label {
   line-height: 90rpx;
-  width: 160rpx; /*five character*/
-  background-color: gold;
+  width: 135rpx; /*five character*/
   border-right: 2rpx solid #ddd;
   padding-right: 10rpx;
+  font-size: 30rpx;
+}
+
+.adv-range-content {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
 }
 
 .adv-range-tag-view {
@@ -127,17 +133,22 @@
 .adv-item input {
   width: 150rpx;
   /* width: 600rpx; */
-  margin-left: 20rpx;
-  font-size: 28rpx; 
   border-bottom: 1px solid #405f80; 
-  background-color: gainsboro;
+  text-align: center;
+  height: 50rpx;
+  margin-top: 20rpx;
+}
+
+.split-label {
+  line-height: 90rpx;
 }
 
 .adv-people-input-view {
+  flex: 1;
   display: flex;
   flex-direction: row;
-  width: 70%;
   justify-content: space-around;
+
 }
 
 .adv-people .placeholder {

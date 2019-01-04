@@ -13,7 +13,10 @@ Page({
     scoreArray: [[0,1, 2, 3, 4, 5, 6, 7, 8, 9], [0,1, 2, 3, 4, 5, 6, 7, 8, 9]],
     scoreIndexArray:[[6,0],[9,9]],
     dateArray:[2000,2020],
-    peopleArray: [1000, 2000]
+    peopleArray: [1000, 2000],
+    adv_item_content: [{ title: '评分:', floor: 6.0, ceil: 9.9 }, 
+    { title: '日期:', floor: 2000, ceil: 2019 }, 
+    { title: '评价人数:', floor: 1000, ceil: 2000}]
   },
   bindButtonTap: function () {
     this.setData({
@@ -21,6 +24,7 @@ Page({
     })
   },
   bindKeyInput: function (e) {
+    console.log(e.currentTarget.id)
     this.setData({
       inputValue: e.detail.value
     })
