@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: row;
   width: 80%;
-  margin: 50rpx auto 0 auto;
+  margin: 50rpx auto 30rpx auto;
 }
 
 .search-container {
@@ -72,65 +72,45 @@
   line-height: 60rpx;
 }
 
-/* 搜索范围 */
-
 .adv-item {
   display: flex;
   flex-direction: row;
-  margin: 60rpx 20rpx 0 20rpx;
+  margin: 40rpx 20rpx 40rpx 20rpx;
   background-color: white;
   height: 90rpx;
   border-radius: 20rpx;
   padding-left: 20rpx;
 }
 
-.adv-label {
+.adv-title {
   line-height: 90rpx;
   width: 135rpx; /*five character*/
   border-right: 2rpx solid #ddd;
   padding-right: 10rpx;
   font-size: 30rpx;
+  text-align: center;
 }
 
+/* 搜索范围 */
 .adv-range-content {
   flex: 1;
   display: flex;
   justify-content: space-around;
+  margin: 13rpx 10rpx auto 10rpx;
 }
 
-.adv-range-tag-view {
-  margin: 15rpx 10rpx auto 10rpx;
+.split-label {
+  line-height: 90rpx;
 }
 
-/* 评分 */
-.adv-rating-input-view {
+.adv-input-view {
+  flex: 1;
   display: flex;
   flex-direction: row;
-  width: 80%;
   justify-content: space-around;
 }
 
-.adv-item picker {
-  background-color: #d1d1d1;
-  height: 50rpx;
-  width: 100rpx;
-}
-
-/* 日期 */
-.adv-date-picker-view {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  justify-content: space-around;
-}
-
-.adv-date picker {
-  background-color: #d1d1d1;
-  width: 100rpx;
-}
-
-/* 评价人数 */
-.adv-item input {
+.adv-input-view input {
   width: 150rpx;
   /* width: 600rpx; */
   border-bottom: 1px solid #405f80; 
@@ -139,22 +119,28 @@
   margin-top: 20rpx;
 }
 
-.split-label {
-  line-height: 90rpx;
-}
-
-.adv-people-input-view {
-  flex: 1;
+.adv-disable {
+  margin: 10rpx 20rpx 0rpx 20rpx;
+  height: 50rpx;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
 }
 
-.adv-people .placeholder {
-  font-size: 28px;
-  color: #d1d1d1;
-  margin-left: 20rpx;
+.test {
+  line-height: 50rpx;
+  margin: 0 10rpx 0 10rpx;
+}
+
+.line-left{
+  height: 1px;
+  width:20rpx;
+ background-color: #405f80;
+  margin-top: 24rpx;
+}
+.line-right {
+  flex:1;
+  height: 1px;
+ background-color: #405f80;
+  margin-top: 24rpx;
 }
 
 /* 搜索按钮 */

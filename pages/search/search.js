@@ -14,10 +14,11 @@ Page({
     scoreIndexArray:[[6,0],[9,9]],
     dateArray:[2000,2020],
     peopleArray: [1000, 2000],
-    adv_item_content: [{ title: '评分:', floor: 6.0, ceil: 9.9 }, 
-    { title: '日期:', floor: 2000, ceil: 2019 }, 
-    { title: '评价人数:', floor: 1000, ceil: 2000}]
+    adv_item_content: [{ title: '评分:', floor: 6.0, ceil: 9.9, state: false }, 
+    { title: '日期:', floor: 2000, ceil: 2019, state:true }, 
+    { title: '评价人数:', floor: 1000, ceil: 2000, state:true}]
   },
+
   bindButtonTap: function () {
     this.setData({
       focus: true
@@ -27,6 +28,13 @@ Page({
     console.log(e.currentTarget.id)
     this.setData({
       inputValue: e.detail.value
+    })
+  },
+  onChangeItemState: function(e) {
+    var index = e.currentTarget.id
+    this.data.adv_item_content[index].state = !this.data.adv_item_content[index].state
+    this.setData({
+      adv_item_content: this.data.adv_item_content
     })
   },
 
