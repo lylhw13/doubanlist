@@ -3,8 +3,8 @@
 .main_view {
   display: flex;
   flex-direction: row;
-  margin-top: 20rpx;
-  margin-bottom: 40rpx;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
   margin-left: 0rpx;
   background-color: #fff;
   border-bottom: 1px solid #ededed;

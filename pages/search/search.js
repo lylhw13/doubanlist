@@ -2,7 +2,6 @@ Page({
   data: {
     focus: false,
     inputValue: '',
-    //searchRange : ["书名","标签","作者","出版社"],
     searchRange: [
       { id: 0, checked: true, tag: "书名"},
       { id: 1, checked: false, tag: "标签" },
@@ -10,13 +9,11 @@ Page({
       { id: 3, checked: false, tag: "出版社" },
       // { id: 4, checked: false, tag: "ISBN" },      
     ],
-    scoreArray: [[0,1, 2, 3, 4, 5, 6, 7, 8, 9], [0,1, 2, 3, 4, 5, 6, 7, 8, 9]],
-    scoreIndexArray:[[6,0],[9,9]],
-    dateArray:[2000,2020],
-    peopleArray: [1000, 2000],
-    adv_item_content: [{ title: '评分:', floor: 6.0, ceil: 9.9, state: false }, 
-    { title: '日期:', floor: 2000, ceil: 2019, state:true }, 
-    { title: '评价人数:', floor: 1000, ceil: 2000, state:true}]
+    adv_item_content: [
+      { title: '评分:', label:'rating', state: false, input: ['6.0', '9.9'], inputHolder: ['最低分', '最高分'], maxLength:3, type: 'digit'}, 
+      { title: '日期:', label:'date', state: false, input:['2000', '2019'], inputHolder:['最早时间','最晚时间'], maxLength:4, type:'number' }, 
+      { title: '评价人数:', label:'people', state: false, input: ['1000', '2000'], inputHolder: ['最少人数', '最多人数'], maxLength:9, type: 'number'}
+      ]
   },
 
   bindButtonTap: function () {
@@ -24,33 +21,32 @@ Page({
       focus: true
     })
   },
-  bindKeyInput: function (e) {
-    console.log(e.currentTarget.id)
-    this.setData({
-      inputValue: e.detail.value
-    })
-  },
-  onChangeItemState: function(e) {
-    var index = e.currentTarget.id
-    this.data.adv_item_content[index].state = !this.data.adv_item_content[index].state
+  bindAdvInput: function (e) {
+    var itemId = parseInt(e.currentTarget.id/2);
+    var inputId = e.currentTarget.id%2;
+    var flag = true;
+    if(itemId === 0) {
+      if(e.detail.value > 10) {
+        wx.showToast({
+          title: 'the number must be less than 10',
+          icon: 'none',
+        })
+        flag = false;
+      }
+    }
+    if(flag) {
+      this.data.adv_item_content[itemId].input[inputId] = e.detail.value
+    }
     this.setData({
       adv_item_content: this.data.adv_item_content
     })
   },
 
-  bindScoreChange: function(e) {
-    var idx = e.currentTarget.id;
-    this.data.scoreIndexArray[idx] = e.detail.value;
+  onChangeItemState: function(e) {
+    var index = e.currentTarget.id
+    this.data.adv_item_content[index].state = !this.data.adv_item_content[index].state
     this.setData({
-        scoreIndexArray: this.data.scoreIndexArray
-    })
-  },
-
-  bindDateChange: function (e) {
-    var idx = e.currentTarget.id;
-    this.data.dateArray[idx] = e.detail.value;
-    this.setData({
-      dateArray: this.data.dateArray
+      adv_item_content: this.data.adv_item_content
     })
   },
 
@@ -61,19 +57,77 @@ Page({
       searchRange : this.data.searchRange
     })
   },
+
   onSearch: function(e) {
-    console.log('here')
-    wx.request({
-      url: 'https://149.28.213.189:443',
-      success:function(res) {
-        console.log('success');
-      },
-      fail: function (res) {
-        console.log('fail');
-      },
-      complete: function (res) {
-        console.log('complete');
+    //check the input value
+    console.log('onSearch')
+    var paras = '?searchRange=';
+    var searchInfo=[]
+    for(var i=0; i<this.data.searchRange.length; i++) {
+      if(this.data.searchRange[i].checked) {
+        //parasArray.push(('searchRange[]=' + this.data.searchRange[i].tag));
+        searchInfo.push(this.data.searchRange[i].tag);
       }
-    })
-  }
-})
+    }
+
+    if (searchInfo.length === 0) {
+      wx.showToast({
+        title: 'please set the search range',
+        icon: 'none'
+      });
+      return;
+    }
+
+    paras += JSON.stringify(searchInfo)
+
+    var advInfo = []
+    for(var i=0; i< this.data.adv_item_content.length; i++) {
+      var item = this.data.adv_item_content[i]
+      if(item.state) {
+        var para = {}
+        para[item.label] = item.input
+        advInfo.push(para)
+      }
+    }
+    
+    if(advInfo.length != 0) {
+      paras += ('&advInfo=' + JSON.stringify(advInfo))
+    }
+
+    console.log(paras)
+    wx.navigateTo({
+      url: '../result/result' + paras,
+    });
+  },
+
+  writeLocalDate: function(){
+
+  },
+
+  onLoad: function() {
+    console.log('onLoad')
+    var storageData = wx.getStorageSync('data')
+    if(storageData.length!=0) {
+      this.setData({
+        ...storageData
+      })
+    }
+  },
+
+  onReady: function () {
+    console.log('onReady')
+  },
+
+  onShow: function () {
+    console.log('onShow')
+  },
+
+  onHide: function () {
+    console.log('onHide')
+    wx.setStorageSync("data", this.data)
+  },
+
+  onUnload: function () {
+    console.log('onUnload')
+  },
+});

@@ -7,34 +7,67 @@ Page({
    * 页面的初始数据
    */
   data: {
-    orderArray: ["评分", "日期", "评价人数", "自定义"],
-    orderIndexArray: ["0", "1", "2", "3"],
-    showMoreInfo: false
+    orderArray: ["评分", "日期", "评价人数"],
+    orderIndexArray: ["0", "1", "2"],
+    backupOrderIndexArray: ["0", "1", "2"],
+    showMoreInfo: false,
+    pickerChanged: false
   },
-  onOrderChange: function (e) {
+  onOrderChange: function (e) {    
     var pickerId = e.currentTarget.id;
     var itemId = e.detail.value;
     if (this.data.orderIndexArray.slice(0, pickerId).includes(itemId)) {//0 ~ pickerId 对应的是之前的选择元素
       console.log("return");
       return;
     }
-    var tmpArray = this.data.orderIndexArray.splice(pickerId, this.data.orderArray.length - pickerId).sort();
-    var modifyArray = [itemId]
+    var orderIndexArray = this.data.orderIndexArray.slice()//copy by value
+    var tmpArray = orderIndexArray.splice(pickerId, this.data.orderArray.length - pickerId).sort();
+    orderIndexArray.push(itemId)
+    //var modifyArray = [itemId]
     for (var i = 0; i < tmpArray.length; i++) {
       if (tmpArray[i] !== itemId) {
-        modifyArray.push(tmpArray[i]);
+        orderIndexArray.push(tmpArray[i]);
       }
     }
+
+    var pickerChanged = (orderIndexArray.toString() !== this.data.backupOrderIndexArray.toString())
+
     this.setData({
-      orderIndexArray: this.data.orderIndexArray.concat(modifyArray)
+      orderIndexArray: orderIndexArray,
+      pickerChanged: pickerChanged
     })
   },
 
+  onRefresh: function(e) {
+    //only update the backupOrder by refresh
+
+    //reload from url
+    this.setData({
+      backupOrderIndexArray: this.data.orderIndexArray,
+      pickerChanged: false
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log("result onLoad")
+    var searchRange = JSON.parse(options.searchRange)
+    var advInfo = JSON.parse(options.advInfo)
+    //Todo generate the html
+    /*wx.request({
+      url: 'https://149.28.213.189:443',
+      success: function (res) {
+        console.log('success');
+      },
+      fail: function (res) {
+        console.log('fail');
+      },
+      complete: function (res) {
+        console.log('complete');
+      }
+    });*/
     var postData = post_data.postList;
     for(var idx=0;idx<postData.length;idx++){
       //var postData = post_data.postList[0];
@@ -80,6 +113,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
+    console.log("result onReady")
 
   },
 
@@ -87,6 +121,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    console.log("result onShow")
 
   },
 
@@ -94,6 +129,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
+    console.log("result onHide")
 
   },
 
@@ -101,6 +137,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
+    console.log("result onUnload")
 
   },
 

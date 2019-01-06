@@ -2,17 +2,21 @@
 <import src="/pages/book-item/book-item.wxml" />
 
 <view class="order-container">
-  <text>排序依据:</text>
-  <picker mode="selector" value="{{orderIndexArray[0]}}" range="{{orderArray}}" id="0" bindchange="onOrderChange">
-    > {{orderArray[orderIndexArray[0]]}}
-  </picker>
-  <picker mode="selector" value="{{orderIndexArray[1]}}" range="{{orderArray}}" id="1" bindchange="onOrderChange">
-    > {{orderArray[orderIndexArray[1]]}}
-  </picker>
-  <picker mode="selector" value="{{orderIndexArray[2]}}" range="{{orderArray}}" id="2" bindchange="onOrderChange">
-    > {{orderArray[orderIndexArray[2]]}}
-  </picker>
-  <text>> {{orderArray[orderIndexArray[3]]}}</text>
+  <text class='title'>排序依据:</text>
+  <view class='picker-view'>
+    <picker mode="selector" value="{{orderIndexArray[0]}}" range="{{orderArray}}" id="0" bindchange="onOrderChange">
+      > {{orderArray[orderIndexArray[0]]}}
+    </picker>
+    <picker mode="selector" value="{{orderIndexArray[1]}}" range="{{orderArray}}" id="1" bindchange="onOrderChange">
+      > {{orderArray[orderIndexArray[1]]}}
+    </picker>
+    <picker mode="selector" value="{{orderIndexArray[2]}}" range="{{orderArray}}" id="2" bindchange="onOrderChange">
+      > {{orderArray[orderIndexArray[2]]}}
+    </picker>
+  </view>
+  <view wx:if="{{pickerChanged}}" bindtap="onRefresh" class='refresh'>
+    <text>更新</text>
+  </view>
 </view>
 <view>
   <block wx:for="{{postData}}" wx:for-index="idx">
