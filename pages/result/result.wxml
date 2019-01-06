@@ -1,5 +1,6 @@
 <!--pages/result/result.wxml-->
 <import src="/pages/book-item/book-item.wxml" />
+<import src="./more-info/more-info.wxml"/>
 
 <view class="order-container">
   <text class='title'>排序依据:</text>
@@ -22,13 +23,5 @@
   <block wx:for="{{postData}}" wx:for-index="idx">
     <template is="book-item-template" data="{{...postData[idx]}}" id="{{idx}}" />
   </block>
-  <view wx:if="{{showMoreInfo}}" class="more-info-view" catchtap='onCloseMoreInfo'>
-    <view class="info-text">
-      <text>{{postData[moreInfoIndex].info}}</text>
-      <view>
-        <text>标签：</text>
-        <text class="tags-array">{{postData[moreInfoIndex].tags}}</text>
-      </view>
-    </view>
-  </view>
+  <template is='more-info-template' data='{{showMoreInfo, currentInfo}}'/>
 </view>

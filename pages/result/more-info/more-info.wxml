@@ -1,0 +1,13 @@
+<template name='more-info-template'>
+  <view wx:if="{{showMoreInfo}}" class="more-info-container" catchtap='onCloseMoreInfo'>
+    <view class='more-infos-view'>
+    <text class='book-title'>{{currentInfo.title}}</text>
+      <block wx:for="{{currentInfo.infoArray}}" wx:for-item="item">
+        <view class='info-view'>
+          <text class='info-title'>{{item[0]}}</text>
+          <text class='info-content'>{{item[1]}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>

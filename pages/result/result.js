@@ -54,7 +54,10 @@ Page({
   onLoad: function(options) {
     console.log("result onLoad")
     var searchRange = JSON.parse(options.searchRange)
-    var advInfo = JSON.parse(options.advInfo)
+    var advInfo = []
+    if('advInfo' in options) {
+      advInfo = JSON.parse(options.advInfo)
+    }
     //Todo generate the html
     /*wx.request({
       url: 'https://149.28.213.189:443',
@@ -91,6 +94,23 @@ Page({
 
       var tagsArray = postData[idx].tags.split(',');
       postData[idx].tagsArray = tagsArray;
+
+
+      /*var infoArray = []
+      var more_infos = postData[idx].info.split('\n');
+      for (var i = 0; i < more_infos.length; i++) {
+        var info = more_infos[i];
+        if (info.length != 0) {
+          var index = info.indexOf(':')
+          //var tmp = {}
+          //tmp[info.substring(0, index + 1)] = info.substring(index + 1)
+          var tmp = []
+          tmp.push(info.substring(0, index + 1));
+          tmp.push(info.substring(index + 1));
+          infoArray.push(tmp)
+        };
+      }
+      postData[idx].infoArray = infoArray*/
     }
     
     this.setData({
@@ -99,9 +119,23 @@ Page({
   },
   
   onMoreInfo: function(e) {
+    var id = e.currentTarget.id;
+    var currentInfo = {}
+    currentInfo['title'] = this.data.postData[id].title;
+    var infoArray = []
+    var more_infos = this.data.postData[id].info.split('\n');
+    for (var i = 0; i < more_infos.length; i++) {
+      var info = more_infos[i];
+      if (info.length != 0) {
+        var index = info.indexOf(':')
+        infoArray.push([info.substring(0, index + 1), info.substring(index + 1)])
+      };
+    };
+    infoArray.push(['标签:', this.data.postData[id].tags])
+    currentInfo['infoArray'] = infoArray
     this.setData({
       showMoreInfo: true,
-      moreInfoIndex: e.currentTarget.id,
+      currentInfo: currentInfo
     })
   },
   onCloseMoreInfo: function(e) {

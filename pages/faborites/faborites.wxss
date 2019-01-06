@@ -1,17 +1,35 @@
 /* pages/faborites/faborites.wxss */
+@import "/pages/book-item/book-item.wxss";
+@import "/pages/result/more-info/more-info.wxss";
+
 .order-container{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  height: 70rpx;
+  background-color: white;
+  border-top: 1px solid #f2f2f2;
 }
 
-.order-container picker{
-  background-color: gainsboro;
-  width: 20%;
-  margin: auto 30rpx auto 30rpx;
+.title{
+  line-height: 70rpx;
+  font-size: 25rpx;
+  width: 130rpx;
+  text-align: center;
 }
 
-.order-container text{
-  background-color: gainsboro;
-  width: 20%;
-  margin: auto 30rpx auto 30rpx;
+.picker-view picker{
+  height: 50rpx;
+  width: 300rpx;
+  line-height: 50rpx;
+  font-size: 25rpx;
+  margin-top: 10rpx;
+  background-color: #f2f2f2;
+  border-radius: 15rpx;
+  text-align: center;
+}
+
+page {
+  height: 100%;
+  background-color: #f2f2f2;
 }

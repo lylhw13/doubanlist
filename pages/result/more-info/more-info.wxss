@@ -1,0 +1,50 @@
+.more-info-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.97;
+  overflow: hidden;
+  z-index: 9000;
+  background-color: #f2f2f2;
+}
+
+.more-infos-view {
+  display: flex;
+  flex-direction: column;
+  margin: 30rpx 30rpx auto 30rpx;
+  height: 100%;
+}
+
+.info-view {
+  display: flex;
+  flex-direction: row;
+  min-height: 60rpx;
+  margin: 5rpx 0 5rpx 0;
+  background-color: white;
+  border-radius: 10rpx;
+  padding-left: 10rpx;
+  padding-right: 5rpx;
+}
+
+.book-title {
+  width: 100%;
+  height: 60rpx;
+  font-size: 35rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.info-view text{
+  line-height: 60rpx;
+}
+
+.info-view .info-title{
+  width: 130rpx;
+}
+
+.info-view .info-content{
+  flex:1;
+  flex-wrap: wrap;
+}

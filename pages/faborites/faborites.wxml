@@ -1,4 +1,5 @@
 <!--pages/faborites/faborites.wxml-->
+<!--
 <view class="order-container">
   <picker mode="selector" value="{{orderIndexArray[0]}}" range="{{orderArray}}" id="0" bindchange="onOrderChange">
     {{orderIndexArray[0]}}-{{orderArray[orderIndexArray[0]]}}
@@ -12,5 +13,22 @@
   <text class="the-last-one">
   {{orderIndexArray[3]}}-{{orderArray[orderIndexArray[3]]}}
   </text>
-  <button bindtap='onRequest'>request</button>
+</view>
+-->
+<import src="/pages/book-item/book-item.wxml" />
+<import src="/pages/result/more-info/more-info.wxml"/>
+
+<view class="order-container">
+  <text class='title'>排序依据:</text>
+  <view class='picker-view'>
+    <picker mode="selector" value="{{orderIndexArray[0]}}" range="{{orderArray}}">
+      > {{orderArray[orderIndexArray[0]]}}
+    </picker>
+  </view>
+</view>
+<view>
+  <block wx:for="{{postData}}" wx:for-index="idx">
+    <template is="book-item-template" data="{{...postData[idx]}}" id="{{idx}}" />
+  </block>
+  <template is='more-info-template' data='{{showMoreInfo, currentInfo}}'/>
 </view>

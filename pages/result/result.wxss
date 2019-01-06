@@ -1,5 +1,6 @@
 /* pages/result/result.wxss */
 @import "/pages/book-item/book-item.wxss";
+@import "./more-info/more-info.wxss";
 
 .order-container{
   display: flex;
@@ -47,23 +48,6 @@
   line-height: 50rpx;
   font-size: 25rpx;
   color: #405f80;
-}
-
-.more-info-view {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 0.95;
-  overflow: hidden;
-  z-index: 9000;
-  background-color: #f2f2f2;
-
-}
-
-.more-info-view .info-text{
-  margin: 60rpx 30rpx auto 30rpx;
 }
 
 page {

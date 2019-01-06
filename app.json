@@ -19,7 +19,7 @@
         "text": "搜索"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/faborites/faborites",
         "text": "收藏"
       }
     ]
